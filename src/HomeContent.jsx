@@ -1,5 +1,6 @@
 import React from 'react'
 import { IoExitOutline } from "react-icons/io5";
+import { NavLink } from 'react-router-dom';
 
 function HomeContent() {
     return (
@@ -19,30 +20,52 @@ function HomeContent() {
                 <p className='text-gray-500'>Enjoy easy and convenient financial services with us. Cashout charge is low.</p>
             </div>
             <div className='mt-4 grid grid-cols-6 w-[90%] mx-auto'>
-                <div className='flex-col flex items-center justify-center gap-2 border-2 w-[150px] p-4 rounded-lg border-gray-300 hover:border-[#0874F2] hover:bg-[#d6e8ff] transition duration-300'>
-                    <img src="/public/wallet1.png" alt="" />
-                    <p className='text-gray-700 font-medium'>Add Money</p>
-                </div>
-                <div className='flex-col flex items-center justify-center gap-2 border-2 w-[150px] p-4 rounded-lg border-gray-300'>
-                    <img src="/public/send1.png" alt="" />
-                    <p className='text-gray-700 font-medium'>Cashout</p>
-                </div>
-                <div className='flex-col flex items-center justify-center gap-2 border-2 w-[150px] p-4 rounded-lg border-gray-300'>
-                    <img src="/public/money1.png" alt="" />
-                    <p className='text-gray-700 font-medium'>Transfer Money</p>
-                </div>
-                <div className='flex-col flex items-center justify-center gap-2 border-2 w-[150px] p-4 rounded-lg border-gray-300'>
-                    <img src="/public/bonus1.png" alt="" />
-                    <p className='text-gray-700 font-medium'>Get Bonus</p> 
-                </div>
-                <div className='flex-col flex items-center justify-center gap-2 border-2 w-[150px] p-4 rounded-lg border-gray-300'>
-                    <img src="/public/purse1.png" alt="" />
-                    <p className='text-gray-700 font-medium'>Pay Bill</p> 
-                </div>
-                <div className='flex-col flex items-center justify-center gap-2 border-2 w-[150px] p-4 rounded-lg border-gray-300'>
-                    <img src="/public/transaction1.png" alt="" />
-                    <p className='text-gray-700 font-medium'>Transactions</p>
-                </div>
+                <NavLink to="/home/add-money" className={({ isActive }) => `border-2 w-[150px] rounded-lg hover:border-[#0874F2] 
+                hover:bg-[#d6e8ff] transition duration-300 ${isActive ? "border-[#0874F2] bg-[#d6e8ff]" : "border-gray-300"}`}>
+                    <div className="flex flex-col items-center justify-center gap-2  p-4 ">
+                        <img src="/wallet1.png" alt="wallet" />
+                        <p className="text-gray-700 font-medium">Add Money</p>
+                    </div>
+                </NavLink>
+                <NavLink to="/home/cashout" className={({ isActive }) => `border-2 w-[150px] rounded-lg hover:border-[#0874F2] 
+                hover:bg-[#d6e8ff] transition duration-300 ${isActive ? "border-[#0874F2] bg-[#d6e8ff]" : "border-gray-300"}`}>
+                    <div className="flex flex-col items-center justify-center gap-2 p-4">
+                        <img src="/send1.png" alt="wallet" />
+                        <p className="text-gray-700 font-medium">Cashout</p>
+                    </div>
+                </NavLink>
+
+                <NavLink to="/home/transfer" className={({ isActive }) => `border-2 w-[150px] rounded-lg hover:border-[#0874F2] 
+                hover:bg-[#d6e8ff] transition duration-300 ${isActive ? "border-[#0874F2] bg-[#d6e8ff]" : "border-gray-300"}`}>
+                    <div className="flex flex-col items-center justify-center gap-2 p-4">
+                        <img src="/money1.png" alt="wallet" />
+                        <p className="text-gray-700 font-medium">Transfer Money</p>
+                    </div>
+                </NavLink>
+
+                <NavLink to="/home/bonus" className={({ isActive }) => `border-2 w-[150px] rounded-lg hover:border-[#0874F2] 
+                hover:bg-[#d6e8ff] transition duration-300 ${isActive ? "border-[#0874F2] bg-[#d6e8ff]" : "border-gray-300"}`}>
+                    <div className="flex flex-col items-center justify-center gap-2 p-4">
+                        <img src="/bonus1.png" alt="wallet" />
+                        <p className="text-gray-700 font-medium">Get Bonus</p>
+                    </div>
+                </NavLink>
+
+                <NavLink to="/home/pay-bill" className={({ isActive }) => `border-2 w-[150px] rounded-lg hover:border-[#0874F2] 
+                hover:bg-[#d6e8ff] transition duration-300 ${isActive ? "border-[#0874F2] bg-[#d6e8ff]" : "border-gray-300"}`}>
+                    <div className="flex flex-col items-center justify-center gap-2 p-4">
+                        <img src="/purse1.png" alt="wallet" />
+                        <p className="text-gray-700 font-medium">Pay Bill</p>
+                    </div>
+                </NavLink>
+
+                <NavLink to="/home/transaction" className={({ isActive }) => `border-2 w-[150px] rounded-lg hover:border-[#0874F2] 
+                hover:bg-[#d6e8ff] transition duration-300 ${isActive ? "border-[#0874F2] bg-[#d6e8ff]" : "border-gray-300"}`}>
+                    <div className="flex flex-col items-center justify-center gap-2 p-4">
+                        <img src="/transaction1.png" alt="wallet" />
+                        <p className="text-gray-700 font-medium">Transactions</p>
+                    </div>
+                </NavLink>
             </div>
         </div>
     )
