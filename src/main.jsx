@@ -4,6 +4,12 @@ import './index.css'
 import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 import Login from './Login.jsx';
 import Home from './Home.jsx';
+import AddMoney from './Components/AddMoney.jsx';
+import Transaction from './Components/Transaction.jsx';
+import Cashout from './Components/Cashout.jsx';
+import Transfer from './Components/Transfer.jsx';
+import Bonus from './Components/Bonus.jsx';
+import PayBill from './Components/PayBill.jsx';
 
 const router = createBrowserRouter([
   {
@@ -13,6 +19,32 @@ const router = createBrowserRouter([
   {
     path: "/home",
     element:<Home></Home>,
+    children:[
+      {
+        path: "/home/add-money",
+        element:<AddMoney></AddMoney>,
+      },
+      {
+        path: "/home/transaction",
+        element:<Transaction></Transaction>,
+      },
+      {
+        path: "/home/cashout",
+        element:<Cashout></Cashout>,
+      },
+      {
+        path: "/home/transfer",
+        element:<Transfer></Transfer>,
+      },
+      {
+        path: "/home/bonus",
+        element:<Bonus></Bonus>,
+      },
+      {
+        path: "/home/pay-bill",
+        element:<PayBill></PayBill>,
+      },
+    ]
   },
 ]);
 
